@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="registro.css">
+    <script src="productos.js"></script>
+</head>
+<body>
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">
+                    <img src="Imagen de logo/logo.1.jpg" width="50" height="50" alt="Logo">
+                    <span >Geometricos PC </span>
+                </a>
+            </div>
+            
+            <nav id="nav" class="navegador">
+                <ul class="menu">
+                    <li><a href="index.html" onclick="seleccionar()" class="texto">INICIO</a></li>
+                    <li>
+                        <a href="#Productos" onclick="mostrarSubMenu('productos')" class="texto">PRODUCTOS</a>
+                        <ul id="productosSubMenu" class="submenu">
+                            <li><a href="Productos mas vendido.html">Lo más vendido</a>
+                            <a href="Productos con descuento.html">Con descuento</a>
+                            <a href="#" onclick="mostrarSubMenuInterno('marcasSubMenuInterno')">Marcas</a>
+                                <ul id="marcasSubMenuInterno" class="submenusi">
+                                    <li><a href="intel.html">Intel</a>
+                                    <a href="amd.html">AMD</a>
+                                    <a href="Nvidia.html">NVIDIA</a>
+                                    <a href="Asus.html">ASUS</a>
+                                    <a href="Msi.html">MSI</a>
+                                    <a href="gigabyte.html">GIGABYTE</a>
+                                    <a href="Corsair.html">Corsair</a>
+                                    <a href="Crusial.html">Crucial(Micron)</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#Cuenta" onclick="mostrarSubMenu('cuenta')" class="texto">CUENTA</a>
+                        <ul id="cuentaSubMenu" class="submenu">
+                            <li><a href="iniciodessesion.html" onclick="seleccionar()" class="texto">Inicio de sesión</a>
+                                <a href="registro.html" onclick="seleccionar()" class="texto">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Contacto" onclick="seleccionar()" class="texto">CONTACTO</a>
+                    <ul id="cuentaSubMenu" class="submenu">
+                        <li><a href="Sucursal.html" onclick="seleccionar()" class="texto">Sucursal</a>
+                        <a href="formularioC.html" onclick="seleccionar()" class="texto">Formulario</a></li>
+                    </ul>
+                </li>
+                    <li><img src="Carrito de compras/carito.png" width="50" height="50" alt="Logo" onclick="seleccionar()"></li>
+                    <ul><li>
+                        <div class="cart">
+                            <h2>Carrito</h2>
+                            <ul id="cart-items">
+
+                                <!-- Los elementos del carrito se agregarán aquí dinámicamente con JavaScript -->
+                            </ul>
+                            <p>Total: $<span id="cart-total">0</span></p>
+                    </li></ul>
+                </nav>
+            <!-- Icono de hamburguesa -->
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            <!-- Icono de hamburguesa -->
+            </div>
+        </header>
+    </div>
+    <!--Contenedor header -->
+    
+    <!--Contenedor header -script -->
+    <script>
+        // Función para mostrar u ocultar el menú en pantallas pequeñas
+        function mostrarOcultarMenu() {
+            var menu = document.querySelector('.contenedor-header .navegador .menu');
+            menu.classList.toggle('active');
+        }
+    
+        // Función para ocultar el menú en pantallas pequeñas después de hacer clic en un enlace
+        function seleccionar() {
+            var menu = document.querySelector('.contenedor-header .navegador .menu');
+            menu.classList.remove('active');
+        }
+    
+        // Función para mostrar u ocultar el submenú
+        function mostrarSubMenu(menuId) {
+            var subMenu = document.getElementById(menuId + 'SubMenu');
+            if (subMenu) {
+                subMenu.classList.toggle('active');
+            }
+        }
+    </script>
+    <!--Contenedor header -script -->
+    
+    
+    <!--Contenedor header -script -->
+    
+    <!-- Registro -->
+    <section id="Registro" class="Registro">
+        <div class="container">
+            <h2>Registrarse</h2>
+            <form id="registroForm">
+                <input type="text" id="username" name="username" placeholder="Nombre de usuario" required>
+                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmar contraseña" required>
+                <input type="submit" value="Registrarse">
+            </form>
+        </div>
+    </section>
+    <!-- Fin del contenido principal -->
+
+
+    <!--FOOTER-->
+    <footer>
+        <a href="#Registro" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="https://es-la.facebook.com/login/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://mx.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+            <div class="Ad">
+                <p>Created by Geometricos_PC 2024 | Para cualquier problema, contáctanos al teléfono: 5512365089</p> 
+            </div>
+        </div>
+    </footer>
+    <!--FOOTER-->
+
+</body>
+</html>

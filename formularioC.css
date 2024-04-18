@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+    margin: 0;
+    padding: 0;
+}
+html{
+    /* me permite deslizar cuando hago clic en los links del menu */
+    scroll-behavior: smooth;
+}
+/*<!--Contenedor header -->*/
+.contenedor-header{
+    background: #0d012529;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.contenedor-header header{
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+.contenedor-header header .logo a{
+    display: inline;
+    font-family: 'Righteous';
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    display: flex; /* Convertir el contenedor en un flexbox */
+    align-items: center; /* Centrar verticalmente los elementos dentro del flexbox */
+}
+.contenedor-header header ul{
+    display: flex;
+    list-style: none;
+    font-size: 12px;
+    margin: 0 10px;
+    padding: 2px;
+}
+.contenedor-header header nav ul li a{
+    text-align: none;
+    color: #fff;
+    margin: 0 10px;
+    padding: 3px;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.contenedor-header header nav ul li a:hover{
+    color:#b8e70e;
+}
+.nav-responsive{
+    background-color: #0078d4;
+    color:#fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+/*<!--Contenedor header -->*/
+
+/* SECCION CONTACTO */
+.contacto{
+    background: rgb(16,80,207);
+    background: radial-gradient(circle, rgba(16,80,207,1) 20%, rgba(5,151,231,1) 65%);
+    color: #fff;
+    padding: 50px 0;
+}
+
+/* Contenido general */
+.contenido-seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Alinea el texto al centro */
+    
+}
+
+/* Estilo del título */
+.contacto h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    padding: 20px 0;
+}
+
+/* Estilo de las columnas */
+.contacto .fila{
+    display: flex;
+    justify-content: center; /* Centra las columnas horizontalmente */
+    width: 100%;
+}
+
+.contacto .col{
+    width: 50%;
+    padding: 10px;
+    position: relative;
+    text-align: center; /* Alinea el contenido de la columna al centro */
+}
+
+/* Estilo de los campos de entrada y textarea */
+.contacto .col input, .contacto .col textarea{
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: #252A2E;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Estilo del botón */
+.contacto button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+/* Estilo de la superposición */
+.contacto button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color:#1c4fb6; 
+    z-index: -1;
+    transition: 1s;
+}
+
+/* Efecto de superposición al pasar el mouse */
+.contacto button:hover .overlay{
+    width: 100%;
+}
+
+/* Estilo de la información */
+.contacto .col .info{
+    position: absolute;
+    top: 50%; /* Posiciona la información en el centro vertical */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #067cdd;
+    padding: 20px;
+    max-width: 350px;
+}
+
+/* Estilo de la lista de información */
+.contacto .col .info ul{
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo de los elementos de la lista de información */
+.contacto .col .info ul li{
+    margin-bottom: 20px;
+}
+
+/* Estilo de los iconos en la lista de información */
+.contacto .col .info ul li i{
+    color: #1c4fb6; 
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+/*Footer*/
+footer{
+    background-color: #252A2E;
+    color: #fff;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+footer .redes{
+    margin-bottom: 20px;
+}
+footer .redes a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+footer .arriba{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #1c4fb6; 
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 18px;
+}
+/*Footer*/
+
+@media screen and (max-width: 768px) {
+    .nav-responsive {
+        display: block;
+    }
+
+    #nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0; /* Alinear con el borde derecho */
+        width: 80%; /* Limitar el ancho del menú desplegable */
+        max-width: 300px; /* Establecer un ancho máximo */
+        background-color:  #0078d4;
+        text-align: center;
+        padding: 0;
+    }
+
+    #nav ul.active {
+        display: flex;
+    }
+
+    #nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Estilos para el icono de hamburguesa */
+.nav-responsive i {
+    cursor: pointer;
+}/*<!--Submenu-->*//* Estilo para el menú principal */
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu > li {
+    position: relative;
+    display: inline-block;
+}
+
+.menu > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: #0078d4;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: #0078d4;
+    transition: all .3s;
+}
+
+/* Estilo para los submenús */
+.submenu {
+    position: absolute;
+    top: 100%; /* Aparece debajo del elemento padre */
+    left: 0;
+    background: #0078d4;
+    padding: 10px;
+    width: 200px; /* Ancho del submenú */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.submenu li {
+    display: block;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Mostrar el submenú al pasar el ratón sobre el elemento padre */
+.menu li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilo para los submenús internos */
+.submenusi {
+    background-color:#0078d4;
+    padding: 10px;
+    width: 200px; /* Ancho del submenú interno */
+    position: absolute;
+    top: 0;
+    left: 100%; /* Aparece a la derecha del elemento padre */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.submenusi.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .menu > li {
+        display: block;
+    }
+
+    .submenu {
+        position: static;
+        width: auto;
+        visibility: visible;
+        opacity: 1;
+        padding: 0;
+    }
+
+    .submenu li {
+        display: block;
+        border-bottom: 1px solid #fff;
+    }
+
+    .submenu li:last-child {
+        border-bottom: none;
+    }
+}
+
+.titulo {
+    text-align: center;
+}
+
+.texto {
+    text-align: center; /* Alinea el texto al centro */
+    max-width: 800px; /* Ancho máximo del texto */
+    padding: 0 20px; /* Añade un poco de espacio a los lados */
+}
+
+
+#map-container {
+    text-align: center;
+    
+}
+
+iframe {
+    width: 600px;
+    height: 450px;
+    border: 0;
+}
+
+/* Estilos para la versión móvil */
+@media screen and (max-width: 768px) {
+    .productos {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+/*Footer*/
+footer{
+    background-color: #252A2E;
+    color: #fff;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+footer .redes{
+    margin-bottom: 20px;
+}
+footer .redes a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+footer .arriba{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #1c4fb6; 
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 18px;
+}
+/*Footer*/
+
+@media screen and (max-width: 768px) {
+    .nav-responsive {
+        display: block;
+    }
+
+    #nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0; /* Alinear con el borde derecho de la pantalla */
+        width: 80%; /* Limitar el ancho del menú desplegable */
+        max-width: 300px; /* Establecer un ancho máximo */
+        background-color:  #0078d4;
+        text-align: center;
+        padding: 0;
+    }
+
+    #nav ul.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #nav ul ul {
+        display: none;
+        background-color: #0078d4;
+        padding: 10px 0;
+    }
+
+    #nav ul ul.active {
+        display: block;
+        position: static;
+        width: 100%;
+    }
+
+    #nav ul li {
+        margin: 10px 0;
+        list-style: none;
+        position: relative;
+    }
+
+    #nav ul li:hover > ul {
+        display: block;
+        position: static;
+        width: 100%;
+    }
+
+    .nav-responsive i {
+        cursor: pointer;
+    }
+}
+
+
+/* Estilos para el icono de hamburguesa */
+.nav-responsive i {
+    cursor: pointer;
+}
+

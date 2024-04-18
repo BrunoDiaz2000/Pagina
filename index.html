@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tienda de componentes PC</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="productos.js"></script>
+</head>
+<body>
+<!--Contenedor header -->
+<div class="contenedor-header">
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="Imagen de logo/logo.1.jpg" width="50" height="50" alt="Logo">
+                <span>Geometricos PC</span>
+                
+            </a>
+        </div>
+        <nav id="nav" class="navegador">
+            <ul class="menu">
+                <li><a href="#Inicio" onclick="seleccionar()" class="texto">INICIO</a></li>
+                <li>
+                    <a href="#Productos" onclick="mostrarSubMenu('productos')" class="texto">PRODUCTOS</a>
+                    <ul id="productosSubMenu" class="submenu">
+                        <li><a href="Productos mas vendido.html">Lo más vendido</a>
+                        <a href="Productos con descuento.html">Con descuento</a>
+                        <a href="#" onclick="mostrarSubMenuInterno('marcasSubMenuInterno')">Marcas</a>
+                            <ul id="marcasSubMenuInterno" class="submenusi">
+                                <li><a href="intel.html">Intel</a>
+                                <a href="amd.html">AMD</a>
+                                <a href="Nvidia.html">NVIDIA</a>
+                                <a href="Asus.html">ASUS</a>
+                                <a href="Msi.html">MSI</a>
+                                <a href="gigabyte.html">GIGABYTE</a>
+                                <a href="Corsair.html">Corsair</a>
+                                <a href="Crusial.html">Crucial(Micron)</a></li>
+                            </ul>
+                        <a href="#Mas"onclick="mostrarSubMenuInterno('Mas')" >Más</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Cuenta" onclick="mostrarSubMenu('cuenta')" class="texto">CUENTA</a>
+                    <ul id="cuentaSubMenu" class="submenu">
+                        <li><a href="iniciodessesion.html" onclick="seleccionar()" class="texto">Inicio de sesión</a>
+                        <a href="registro.html" onclick="seleccionar()" class="texto">Registrarse</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Contacto" onclick="seleccionar()" class="texto">CONTACTO</a>
+                <ul id="cuentaSubMenu" class="submenu">
+                    <li><a href="Sucursal.html" onclick="seleccionar()" class="texto">Sucursal</a>
+                    <a href="formularioC.html" onclick="seleccionar()" class="texto">Formulario</a></li>
+                </ul>
+            </li>
+                <li><img src="Carrito de compras/carito.png" width="50" height="50" alt="Carrito"  onclick="toggleLista()"></li>
+                <ul class="oculto">
+                    <li>
+                            <ul id="cart-items"><li>
+                                <!-- Los elementos del carrito se agregarán aquí dinámicamente con JavaScript -->
+                            </li></ul>
+                            <p>Total: $<span id="cart-total">0</span></p>
+                            <button onclick="mostrarMensaje()">Pagar</button>
+                    </li>
+                </ul>
+            </ul>
+        </nav>
+        <!-- Icono de hamburguesa -->
+        <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <!-- Icono de hamburguesa -->
+    </header>
+</div>
+<!--Contenedor header -->
+
+<!--Contenedor header -script -->
+
+<script>
+    // Función para mostrar u ocultar el menú en pantallas pequeñas
+    function mostrarOcultarMenu() {
+        var menu = document.querySelector('.contenedor-header .navegador .menu');
+        menu.classList.toggle('active');
+    }
+
+    // Función para ocultar el menú en pantallas pequeñas después de hacer clic en un enlace
+    function seleccionar() {
+        var menu = document.querySelector('.contenedor-header .navegador .menu');
+        menu.classList.remove('active');
+    }
+
+    // Función para mostrar u ocultar el submenú
+    function mostrarSubMenu(menuId) {
+        var subMenu = document.getElementById(menuId + 'SubMenu');
+        if (subMenu) {
+            subMenu.classList.toggle('active');
+        }
+    }
+</script>
+
+<script>
+    // Función para agregar un producto al carrito
+function agregarAlCarrito(precio,itemId) {
+// Crear un nuevo elemento de lista
+var nuevoItem = document.createElement("li");
+nuevoItem.textContent = "Productos - $" + precio;
+
+nuevoItem.setAttribute("id", itemId);
+
+// Agregar el nuevo elemento al carrito
+document.getElementById("cart-items").appendChild(nuevoItem);
+
+// Actualizar el total
+var totalActual = parseFloat(document.getElementById("cart-total").textContent);
+totalActual += precio;
+document.getElementById("cart-total").textContent = totalActual.toFixed(2);
+
+var botonEliminar = document.createElement("button");
+botonEliminar.textContent = "Eliminar";
+botonEliminar.onclick = function() {
+    eliminarDelCarrito(itemId, precio);
+};
+nuevoItem.appendChild(botonEliminar);
+}
+function eliminarDelCarrito(itemId, precio) {
+// Eliminar el elemento del carrito
+var elementoEliminar = document.getElementById(itemId);
+elementoEliminar.parentNode.removeChild(elementoEliminar);
+
+// Actualizar el total
+var totalActual = parseFloat(document.getElementById("cart-total").textContent);
+totalActual -= precio;
+document.getElementById("cart-total").textContent = totalActual.toFixed(2);
+}
+</script>
+
+
+
+<!--Contenedor header -script -->
+
+ <!-- SECCION INICIO -->
+ <section id="Inicio" class="Inicio">
+    <div>
+        <h2 class="titulo">Bienvenidos a Geométricos PC</h2> <br>
+ 
+        <p>Tu destino definitivo para todas tus necesidades en partes de PC. En Geométricos PC, nos dedicamos a
+        ofrecerte una amplia gama de componentes de alta calidad para potenciar y mejorar tu experiencia informática. Somos un 
+        equipo apasionado de entusiastas de la tecnología comprometidos a proporcionar soluciones informáticas excepcionales a 
+        nuestros clientes. Con años de experiencia en la industria, hemos establecido relaciones sólidas con los principales fabricantes
+         para garantizar que solo ofrecemos productos de la más alta calidad.</p>
+    </section>
+    </div>
+ <section class="Inicio2">
+        <!-- Carrusel de Imágenes -->
+        <div class="contenedor-carrusel">
+           <div class="slider">
+               <ul>
+                   <li><img src="Carusel/Grafica.jpg" alt="Imagen 1"></li>
+                   <li><img src="Carusel/Procesador-i7.jpg" alt="Imagen 2"></li>
+                   <li><img src="Carusel/intel.jpg" alt="Imagen 3"></li>
+               </ul>
+           </div>
+       </div>
+    </section>   
+
+    
+<!-- SECCION INICIO -->
+
+<!-- SECCION Productos -->
+
+<section id="Productos" class="Productos">
+    <div class="container">
+        <h2>Productos Recomendados</h2>
+        <div class="productos">
+            <!-- Ejemplo de producto -->
+            <!--Producto con descuento-->
+            <div class="producto">
+                <img src="Des Productos/nvidia.jpg" alt="Producto 1">
+                <h3>Tarjeta de Video Gigabyte NVIDIA GeForce</h3>
+                <p>Cuenta con RTX 4060 Ti EAGLE 8G, 8GB 128-bit GDDR6, PCI Express 4.0</p>
+                <p class="precio-original">Precio: $8,000</p>
+                <p class="precio-descuento">Precio con descuento: $6,500</p>
+                <button data-product-id="1" class="add-to-cart" onclick="agregarAlCarrito(6500)">Añadir al carrito</button>
+            </div>
+            <!-- Repite estos bloques para cada producto -->
+            <!--Amd-->
+            <div class="producto">
+                <img src="ImdPamd/Ryzen7.png" alt="Producto 2">
+                <h3>Ryzen 7 7800X3D</h3>
+                <p>Ryzen 7 7800X3D de 8 núcleos que debería llegar en abril y, ahora que AMD ha lanzado algunos de los primeros puntos de referencia para juegos, parece que supera al Intel Core i9-13900K hasta en un 24 por ciento.</p>
+                <br>
+                <p>Precio: $8,000</p>
+                <button data-product-id="2" class="add-to-cart" onclick="agregarAlCarrito(8000)">Añadir al carrito</button>
+            </div>
+            <!--Gigabyte-->
+            <div class="producto">
+                <img src="ImdPGigabyte/Monitor Gamer Gigabyte.jpeg" alt="Producto 3">
+                <h3>Monitor Gamer Gigabyte</h3>
+                <p>Resolución de la pantalla: 1920 x 1080 Pixeles, Tipo HD:Full HD, Salida de auriculares,Forma de la pantalla:Plana ,Tamaño de pantalla:60.5 cm (23.8")
+                </p> <br>
+                <p>Precio: $3,000</p>
+                <button data-product-id="5" class="add-to-cart" onclick="agregarAlCarrito(3000)">Añadir al carrito</button>
+            </div>
+            <!--Asus-->
+            <div class="producto">
+                <img src="ImdPAsus/ASUS Dual GeForce RTXÔäó 4060 Ti White OC Edition 8GB GDDR6.webp" alt="Producto 4">
+                <h3>ASUS Dual GeForce RTX™ 4060 Ti White OC Edition 8GB GDDR6</h3>
+                <p>Multiprocesadores de streaming NVIDIA Ada Lovelace: Hasta el doble de rendimiento y eficiencia energética.</p>
+                <br>
+                <p>Precio: $8,600</p>
+                <button data-product-id="9" class="add-to-cart" onclick="agregarAlCarrito(8600)">Añadir al carrito</button>
+            </div>
+
+            <!--Intel-->
+            <div class="producto">
+                <img src="ImdPIntel/XeonG.jpg" alt="Producto 5">
+                <h3>Xeon Gold</h3>
+                <p>Los procesadores escalables Intel® Xeon®, con aceleradores integrados para IA, aprendizaje profundo, compresión de datos, análisis y más, ofrecen innovación y desempeño en pro de los requisitos de cargas de trabajo más solicitados.</p>
+                <br>
+                <p>Precio: $20,000</p>
+                <button data-product-id="8" class="add-to-cart" onclick="agregarAlCarrito(20000)">Añadir al carrito</button>
+            </div>
+            <!--Msi-->
+            <div class="producto">
+                <img src="ImdPMsi/Tarjeta de Video MSI GeForce RTX 4090 GAMING SLIM 24GB GDDR6X.webp" alt="Producto 6">
+                <h3>Tarjeta de Video MSI GeForce RTX 4090 GAMING SLIM 24GB GDDR6X</h3>
+                <p>La NVIDIA GeForce RTX 4090 es la GPU GeForce definitiva. Ofrece un enorme salto en rendimiento, eficiencia y gráficos impulsados por IA con DLSS 3.</p>                <br>
+                <p>Precio: $40,000</p>
+                <button data-product-id="8" class="add-to-cart" onclick="agregarAlCarrito(40000)">Añadir al carrito</button>
+            </div>
+            <!--Nvidia-->
+            <div class="producto">
+                <img src="ImdPNvidia/GeForce-ADA-RTX4060Ti-Back.png" alt="Producto 7">
+                <h3>GeForce-ADA-RTX4060TI-Back</h3>
+                <p>Las GPU NVIDIA® GeForce RTX™ serie 40 son más que rápidas para jugadores y creadores.Velocidad de frecuencia acelerada: 2.54 GHz,Tamaño de memoria de la GPU: 8 GB,Sistema de refrigeración: Fan</p>
+                <br>
+                <p>Precio: $9,000</p>
+                <button data-product-id="3" class="add-to-cart" onclick="agregarAlCarrito(9000)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="ImdPCorsair/Teclado mec+ínico y +¦ptico para juegos K100 RGB.webp" alt="Producto 8">
+                <h3>Teclado mecánico y óptico para juegos K100 RGB </h3>
+                <p>El incomparable teclado mecánico y óptico para juegos CORSAIR K100 RGB combina un impresionante diseño de aluminio, iluminación RGB en cada tecla con la potente tecnología de hiperprocesamiento CORSAIR AXON y los interruptores de teclas CORSAIR OPX RGB.</p><br>
+                <p>Precio: $3,950</p>
+                <button data-product-id="1" class="add-to-cart" onclick="agregarAlCarrito(3950)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="ImdPCrusial/Crucial Pro 48GB Kit (2x24GB) DDR5-6000 UDIMM.png" alt="Producto 9">
+                <h3>Crucial Pro 48GB Kit (2x24GB) DDR5-6000 UDIMM</h3>
+                <p>La memoria Crucial DDR5 Pro ofrece la velocidad vertiginosa y el enorme ancho de banda necesarios para admitir CPU multinúcleo de última generación sin las complicaciones del overclocking, el ajuste de latencia, la búsqueda de matrices y los LED. </p><br>
+                <p>Precio: $13,500</p>
+                <button data-product-id="9" class="add-to-cart" onclick="agregarAlCarrito(13500)">Añadir al carrito</button>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<section id="Mas" class="Mas">
+    <div class="gallery-container">
+        <h3>Si estas interesado en productos de esta marca que no tenemos te invito a visitar:</h3> <br>
+        <div class="frame">
+            <div class="gallery">
+                <img src="Marcas/intel.jpeg" alt="Intel" onclick="redirectTo('https://www.intel.la/content/www/xl/es/homepage.html')">
+                <img src="Marcas/amd.png" alt="AMD" onclick="redirectTo('https://www.amd.com/es.html')">
+                <img src="Marcas/nvidia.png" alt="Nvidia" onclick="redirectTo('https://www.nvidia.com/es-la/')">
+                <img src="Marcas/asus.png" alt="Asus" onclick="redirectTo('https://www.asus.com/mx/')">
+                <img src="Marcas/msi.jpeg" alt="Msi" onclick="redirectTo('https://mx.msi.com/')">
+                <img src="Marcas/gigabyte.jpeg" alt="Gigabyte" onclick="redirectTo('https://www.gigabyte.com/mx')">
+                <img src="Marcas/corsair.png" alt="corsair" onclick="redirectTo('https://www.corsair.com/es/es')">
+                <img src="Marcas/Crucial.png" alt="Intel" onclick="redirectTo('https://www.crucial.mx/')">
+
+                <!-- Agrega más imágenes según sea necesario -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll(".gallery img");
+
+        images.forEach(img => {
+            img.addEventListener("click", function() {
+                images.forEach(otherImg => otherImg.style.transform = "scale(1)");
+                this.style.transform = "scale(1.3)";
+            });
+        });
+    });
+
+    function redirectTo(page) {
+            window.location.href = page;
+        }
+</script>
+
+
+    <!--FOOTER-->
+    <footer>
+        <a href="#Inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="https://es-la.facebook.com/login/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://mx.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+            <div class="Ad">
+                <p>Created by Geometricos_PC 2024 | Para cualquier problema, contáctanos al teléfono: 5512365089</p> 
+            </div>
+        </div>
+    </footer>
+    <!--FOOTER-->
+
+    
+
+
+</body>
+
+
+</html>
+

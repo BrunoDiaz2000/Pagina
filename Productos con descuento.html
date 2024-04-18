@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Productos</title>
+    <link rel="stylesheet" href="Productos con descuento.css">
+    <script src="productos.js"></script>
+</head>
+<body>
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">
+                    <img src="Imagen de logo/logo.1.jpg" width="50" height="50" alt="Logo">
+                    <span >Geometricos PC </span>
+                   
+                </a>
+            </div><nav id="nav" class="navegador">
+                <ul class="menu">
+                    <li><a href="index.html" onclick="seleccionar()" class="texto">INICIO</a></li>
+                    <li>
+                        <a href="#Productos" onclick="mostrarSubMenu('productos')" class="texto">PRODUCTOS</a>
+                        <ul id="productosSubMenu" class="submenu">
+                            <li><a href="Productos mas vendido.html">Lo más vendido</a>
+                            <a href="Productos con descuento.html">Con descuento</a>
+                            <a href="#" onclick="mostrarSubMenuInterno('marcasSubMenuInterno')">Marcas</a>
+                                <ul id="marcasSubMenuInterno" class="submenusi">
+                                    <li><a href="intel.html">Intel</a>
+                                        <a href="amd.html">AMD</a>
+                                        <a href="Nvidia.html">NVIDIA</a>
+                                        <a href="Asus.html">ASUS</a>
+                                        <a href="Msi.html">MSI</a>
+                                        <a href="gigabyte.html">GIGABYTE</a>
+                                        <a href="Corsair.html">Corsair</a>
+                                        <a href="Crusial.html">Crucial(Micron)</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#Cuenta" onclick="mostrarSubMenu('cuenta')" class="texto">CUENTA</a>
+                        <ul id="cuentaSubMenu" class="submenu">
+                            <li><a href="iniciodessesion.html" onclick="seleccionar()" class="texto">Inicio de sesión</a>
+                                <a href="registro.html" onclick="seleccionar()" class="texto">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Contacto" onclick="seleccionar()" class="texto">CONTACTO</a>
+                        <ul id="cuentaSubMenu" class="submenu">
+                            <li><a href="Sucursal.html" onclick="seleccionar()" class="texto">Sucursal</a>
+                            <a href="formularioC.html" onclick="seleccionar()" class="texto">Formulario</a></li>
+                        </ul>
+                    </li>
+                    <li><img src="Carrito de compras/carito.png" width="50" height="50" alt="Logo" onclick="seleccionar()"></li>
+                    <ul><li>
+                        <div class="cart">
+                            <h2>Carrito</h2>
+                            <ul id="cart-items">
+                                <!-- Los elementos del carrito se agregarán aquí dinámicamente con JavaScript -->
+                            </ul>
+                            <p>Total: $<span id="cart-total">0</span></p>
+                    </li></ul>
+                </nav>
+            <!-- Icono de hamburguesa -->
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            <!-- Icono de hamburguesa -->
+            </div>  
+        </header>
+    </div>
+    <!--Contenedor header -->
+    
+    <!--Contenedor header -script -->
+    <script>
+     // Función para mostrar u ocultar el menú en pantallas pequeñas
+     function mostrarOcultarMenu() {
+            var menu = document.querySelector('.contenedor-header .navegador .menu');
+            menu.classList.toggle('active');
+        }
+    
+        // Función para ocultar el menú en pantallas pequeñas después de hacer clic en un enlace
+        function seleccionar() {
+            var menu = document.querySelector('.contenedor-header .navegador .menu');
+            menu.classList.remove('active');
+        }
+    
+        // Función para mostrar u ocultar el submenú
+        function mostrarSubMenu(menuId) {
+            var subMenu = document.getElementById(menuId + 'SubMenu');
+            if (subMenu) {
+                subMenu.classList.toggle('active');
+            }
+        }
+    </script>
+    <!--Contenedor header -script -->
+    
+   
+<!-- Productos -->
+<section id="Productos des" class="Productos">
+    <div class="container">
+        <h2>Productos con Descuento</h2>
+        <div class="productos">
+            <!-- Ejemplo de producto -->
+            <div class="producto">
+                <img src="Des Productos/nvidia.jpg" alt="Producto 1">
+                <h3>Tarjeta de Video Gigabyte NVIDIA GeForce</h3>
+                <p>Cuenta con RTX 4060 Ti EAGLE 8G, 8GB 128-bit GDDR6, PCI Express 4.0</p>
+                <p class="precio-original">Precio: $8,000</p>
+                <p class="precio-descuento">Precio con descuento: $6,500</p>
+                <button data-product-id="1" class="add-to-cart" onclick="agregarAlCarrito(6500)">Añadir al carrito</button>
+            </div>
+            <!-- Repite estos bloques para cada producto -->
+            <div class="producto">
+                <img src="Des Productos/amd.jpg" alt="Producto 2">
+                <h3>AMD Ryzen 7 y 9 </h3>
+                <p>Núcleos	16 y 8, Hilos de ejecución	32 y 16,Frecuencia de reloj base 4,2 GHz y 4,5 GHz y frecuencia de reloj máxima	5,7 GHz	y 5,4 GHz</p>
+                <br>
+                <p class="precio-original">Precio: $18,000</p>
+                <p class="precio-descuento">Precio con descuento: $11,500</p>
+                <button data-product-id="2" class="add-to-cart" onclick="agregarAlCarrito(11500)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="Des Productos/asus.jpg" alt="Producto 3">
+                <h3>Kit Memoria RAM</h3>
+                <p>Kingston FURY Beast DDR4 RGB, 3200MHz, 16GB (2 x 8GB), Non-ECC, CL16, XMP</p>
+                <br>
+                <p class="precio-original">Precio: $2,500</p>
+                <p class="precio-descuento">Precio con descuento: $1,500</p>
+                <button data-product-id="3" class="add-to-cart" onclick="agregarAlCarrito(1500)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="Des Productos/corsair.jpg" alt="Producto 4">
+                <h3>CORSAIR RMX Shift Series</h3>
+                <p>Cuenta con RM1200x, 1200 Watt, 80 Plus Gold Certified, Fully Modular Power Supply </p>
+                <br>
+                <p class="precio-original">Precio: $5,000</p>
+                <p class="precio-descuento">Precio con descuento: $3,500</p>
+                <button data-product-id="4" class="add-to-cart" onclick="agregarAlCarrito(3500)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="Des Productos/crucial.jpg" alt="Producto 5">
+                <h3>Crucial P5 Plus</h3>
+                <p>SSD NVMe M.2, 1TB PCIe 4.0 3D NAND, hasta 6,600MB/s - CT1000P5PSSD8 </p>
+                <br>
+                <p class="precio-original">Precio: $2,000</p>
+                <p class="precio-descuento">Precio con descuento: $900</p>
+                <button data-product-id="5" class="add-to-cart" onclick="agregarAlCarrito(900)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="Des Productos/gigabyte.jpg" alt="Producto 6">
+                <h3>GIGABYTE Tarjeta de Video </h3>
+                <p>Eagle GeForce RTX4060 OC 8GB Triple Fan GDDR6 PCIe 4.0 2xHDMI 2xDP </p>
+                <br>
+                <p class="precio-original">Precio: $7,000</p>
+                <p class="precio-descuento">Precio con descuento: $2,500</p>
+                <button data-product-id="6" class="add-to-cart" onclick="agregarAlCarrito(2500)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="Des Productos/Grafica.jpg" alt="Producto 7">
+                <h3>GIGABYTE GeForce RTX 4090/h3>
+                <p>Gaming OC 24G, 3 Ventiladores WINDFORCE, 24 GB 384 bits GDDR6X, GV-N4090GAMING OC-24GD Tarjeta de Video</p>
+                <br>
+                <p class="precio-original">Precio: $45,000</p>
+                <p class="precio-descuento">Precio con descuento: $28,500</p>
+                <button data-product-id="7" class="add-to-cart" onclick="agregarAlCarrito(28500)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="Des Productos/msi.jpg" alt="Producto 8">
+                <h3>MSI B760 Gaming Plus</h3>
+                <p>Placa Base WiFi para Juegos (soporta procesadores Intel de 12ª/13ª generación, LGA 1700, DDR5, PCIe 4.0, M.2, LAN de 2.5 Gbps, USB 3.2 Gen2, Wi-Fi 6E, ATX) </p>
+                <br>
+                <p class="precio-original">Precio: $3,200</p>
+                <p class="precio-descuento">Precio con descuento: $1,800</p>
+                <button data-product-id="8" class="add-to-cart" onclick="agregarAlCarrito(1800)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="Des Productos/Ram.jpg" alt="Producto 9">
+                <h3>Memoria RAM Dominator Platinum RGB</h3>
+                <p>Gamer color negro 16GB Corsair CMT16GX4M2C3200C16</p>
+                <br>
+                <p class="precio-original">Precio: $4,200</p>
+                <p class="precio-descuento">Precio con descuento: $2,100</p>
+                <button data-product-id="9" class="add-to-cart" onclick="agregarAlCarrito(2100)">Añadir al carrito</button>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- Fin de la sección de productos -->
+
+
+
+
+
+    <!--FOOTER-->
+    <footer>
+        <a href="#Productos des" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="https://es-la.facebook.com/login/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://mx.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+            <div class="Ad">
+                <p>Created by Geometricos_PC 2024 | Para cualquier problema, contáctanos al teléfono: 5512365089</p> 
+            </div>
+        </div>
+    </footer>
+    <!--FOOTER-->
+
+</body>
+</html>
