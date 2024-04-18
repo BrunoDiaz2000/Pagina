@@ -26,6 +26,7 @@ html{
     align-items: center;
     padding: 15px 20px;
 }
+
 .contenedor-header header .logo a{
     display: inline;
     font-family: 'Righteous';
@@ -54,6 +55,19 @@ html{
 .contenedor-header header nav ul li a:hover{
     color:#b8e70e;
 }
+
+.conteiner{
+    max-width: 1024px;
+    padding: 20px;
+    /* text-align: center; */
+    margin: 0 auto; 
+}
+
+p{
+    text-align: center;
+}
+
+
 .nav-responsive{
     background-color: #0078d4;
     color:#fff;
@@ -176,12 +190,13 @@ html{
     background: rgb(16,80,207);
     background: radial-gradient(circle, rgba(16,80,207,1) 20%, rgba(5,151,231,1) 65%);
     background-size: cover;
-    height: 65vh;
+    height: 75vh;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     left: 0;
+    /* max-width: 1024px; */
     right: 0;
 
 }
@@ -292,9 +307,10 @@ html{
 footer{
     background-color: #252A2E;
     color: #fff;
-    padding: 50px 0 30px 0;
+    padding: 10px 0 25px 0;
     text-align: center;
     position: relative;
+    max-height: max-content;
     width: 100%;
 }
 footer .redes{
