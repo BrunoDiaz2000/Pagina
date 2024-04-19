@@ -14,7 +14,7 @@
     <div class="contenedor-header">
         <header>
             <div class="logo">
-                <a href="#">
+                <a href="index.html">
                     <span>ITIZ - UNCHAINED</span>                  
                 </a>
             </div>
@@ -25,7 +25,7 @@
                         <a href="#Productos" onclick="mostrarSubMenu('productos')" class="texto">PRODUCTOS</a>
                         <ul id="productosSubMenu" class="submenu">
                             <li><a href="Productos mas vendido.html">Lo más vendido</a>
-                            <a href="Productos con descuento.html">Con descuento</a>
+                                <a href="Productos con descuento.html">Con descuento</a>
                             </li>
                         </ul>
                     </li>
@@ -79,113 +79,19 @@
 <section id="Productos des" class="Productos">
     <div class="container">
         <h2>Productos mas vendidos</h2>
-        <div class="productos">
-            <!-- Ejemplo de producto -->
-            <!--Corsair-->
-            <div class="producto">
-                <img src="ProductoV/Teclado mecánico y óptico para juegos K100 RGB.png" alt="Producto 1">
-                <h3>Teclado mecánico y óptico para juegos K100 RGB </h3>
-                <p>El incomparable teclado mecánico y óptico para juegos CORSAIR K100 RGB combina un impresionante diseño de aluminio, de teclas CORSAIR OPX RGB.</p><br>
-                <p>Precio: $3,950</p>
-                <button data-product-id="1" class="add-to-cart" onclick="agregarAlCarrito(3950)">Añadir al carrito</button>
-            </div>
-            <!--Amd-->
-            <!-- Repite estos bloques para cada producto -->
-            <div class="producto">
-                <img src="ImdPamd/Ryzen7.png" alt="Producto 2">
-                <h3>Ryzen 7 7800X3D</h3>
-                <p>Ryzen 7 7800X3D de 8 núcleos que debería llegar en abril y, ahora que AMD ha lanzado algunos de los primeros puntos de referencia para juegos, parece que supera al Intel Core i9-13900K hasta en un 24 por ciento.</p>
-                <br>
-                <p>Precio: $8,000</p>
-                <button data-product-id="2" class="add-to-cart" onclick="agregarAlCarrito(8000)">Añadir al carrito</button>
-            </div>
-            <!--Descuento-->
-            <div class="producto">
-                <img src="Des Productos/asus.jpg" alt="Producto 3">
-                <h3>Kit Memoria RAM</h3>
-                <p>Kingston FURY Beast DDR4 RGB, 3200MHz, 16GB (2 x 8GB), Non-ECC, CL16, XMP</p>
-                <br>
-                <p class="precio-original">Precio: $2,500</p>
-                <p class="precio-descuento">Precio con descuento: $1,500</p>
-                <button data-product-id="3" class="add-to-cart" onclick="agregarAlCarrito(1500)">Añadir al carrito</button>
-            </div>
-            <!--Asus-->
-            <div class="producto">
-                <img src="ImdPAsus/ROG RYUJIN III 360 ARGB White Edition.webp" alt="Producto 4">
-                <h3>ROG RYUJIN III 360 ARGB White Edition</h3>
-                <p>Un 3,5" La pantalla LCD proporciona monitoreo instantáneo de información del hardware y animaciones GIF personalizables, ahora con el doble de espacio de almacenamiento.</p>
-                <br>
-                <p>Precio: $7,710</p>
-                <button data-product-id="4" class="add-to-cart" onclick="agregarAlCarrito(7710)">Añadir al carrito</button>
-            </div>
-            <!--Crusial-->
-            <div class="producto">
-                <img src="ImdPCrusial/SSD Crucial BX500 2 TB 3D NAND SATA 2,5 pulgadas.png" alt="Producto 5">
-                <h3>SSD Crucial BX500 2 TB 3D NAND SATA 2,5 pulgadas</h3>
-                <p>Añada memoria flash a su ordenador portátil o de sobremesa con la SSD Crucial BX500, la forma más fácil de conseguir toda la velocidad de un ordenador nuevo sin tener que pagar su precio.</p>
-                 <br>
-                <p>Precio: $2,000</p>
-                <button data-product-id="5" class="add-to-cart" onclick="agregarAlCarrito(2000)">Añadir al carrito</button>
-            </div>
-            <!--Gigabyte-->
-            <div class="producto">
-                <img src="ImdPGigabyte/Mini PC Gigabyte GB-BLCE-4105.jpeg" alt="Producto 6">
-                <h3>Mini PC Gigabyte GB-BLCE-4105</h3>
-                <p>Intel Celeron J4105 - Hasta 8GB - HDMI - Ethernet - Mini DisplayPort - Negro</p><br>
-                <p>Precio: $1,900</p>
-                <button data-product-id="6" class="add-to-cart" onclick="agregarAlCarrito(1900)">Añadir al carrito</button>
-            </div>
-            <!--Intel-->
-            <div class="producto">
-                <img src="ImdPIntel/XeonP.jpg" alt="Producto 7">
-                <h3>Xeon Platinum</h3>
-                <p>Los procesadores escalables Intel® Xeon®, con aceleradores integrados para IA, aprendizaje profundo, compresión de datos, análisis y más, ofrecen innovación y desempeño en pro de los requisitos de cargas de trabajo más solicitados.</p>
-                <br>
-                <p>Precio: $30,000</p>
-                <button data-product-id="7" class="add-to-cart" onclick="agregarAlCarrito(30000)">Añadir al carrito</button>
-            </div>
-            <!--Msi-->
-            <div class="producto">
-                <img src="ImdPMsi/Tarjeta de Video MSI GeForce RTX 4090 GAMING SLIM 24GB GDDR6X.webp" alt="Producto 8">
-                <h3>Tarjeta de Video MSI GeForce RTX 4090 GAMING SLIM 24GB GDDR6X</h3>
-                <p>La NVIDIA GeForce RTX 4090 es la GPU GeForce definitiva. Ofrece un enorme salto en rendimiento, eficiencia y gráficos impulsados por IA con DLSS 3. Experimente juegos de rendimiento ultraalto, mundos virtuales increíblemente detallados con trazado de rayos, productividad sin precedentes y nuevas formas de crear. Está impulsado por la arquitectura NVIDIA Ada Lovelace y viene con 24GB de memoria G6X para brindar la mejor experiencia a jugadores y creadores.</p>
-                <br>
-                <p>Precio: $40,000</p>
-                <button data-product-id="8" class="add-to-cart" onclick="agregarAlCarrito(40000)">Añadir al carrito</button>
-            </div>
-            <!--Nvidia-->
-            <div class="producto">
-                <img src="ImdPNvidia/GeForce-RTX4060-GIGA-white.png" alt="Producto 9">
-                <h3>Gigabyte GeForce RTX 4060 AERO OC 8GB GDDR6 DLSS3</h3>
-                <p>Velocidad de frecuencia acelerada: 2550 MHz</p>
-                <p>Tamaño de memoria de la GPU: 8 GB</p>
-                <p>Sistema de refrigeración: Activo</p>
-                <br>
-                <p>Precio: $7,700</p>
-                <button data-product-id="9" class="add-to-cart" onclick="agregarAlCarrito(7000)">Añadir al carrito</button>
-            </div>
-            
-        </div>
     </div>
 </section>
-<!-- Fin de la sección de productos -->
-    
-   
-  
+
 <!--FOOTER-->
 <footer>
-    <a href="#Productos des" class="arriba">
-        <i class="fa-solid fa-angles-up"></i>
-    </a>
     <div class="redes">
         <a href="https://es-la.facebook.com/login/"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
         <a href="https://mx.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
         <div class="Ad">
-            <p>Created by Geometricos_PC 2024 | Para cualquier problema, contáctanos al teléfono: 5512365089</p> 
+            <p>Created by UNCHAINED 2024 | Para cualquier problema, contáctanos al teléfono: 5634579955</p> 
         </div>
     </div>
 </footer>
-<!--FOOTER-->
 </body>
 </html>
