@@ -404,104 +404,239 @@ footer .arriba{
     }
 }
 
-/*Productos*/
-.Productos{
+
+.Inicio1{
     background: rgb(16,80,207);
     background: radial-gradient(circle, rgba(16,80,207,1) 20%, rgba(5,151,231,1) 65%);
+    background-size: cover;
+    height: 80vh;
     color: #fff;
-    padding: 50px 20px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.Productos .container {
+/* Estilo para el formulario de inicio de sesión */
+.Inicio .container {
+    background-color: #f9f9f9;
     padding: 20px;
-    max-width: 900px;
-    margin: 50px auto 0; /* Aumenta el margen superior para separar más la sección de productos del encabezado */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /*margin-top: 180px;  Ajusta el margen superior según sea necesario */
+    max-width: 400px; /* Ajusta según necesites */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.Productos h2 {
+.Inicio h2 {
+    color: black;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+.Inicio input[type="text"],
+.Inicio input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.producto {
-    background: linear-gradient(-45deg, #ff6a00, #ee0979, #ff6a00, #ee0979);
-    background-size: 400% 400%;
-    animation: wave 10s infinite alternate;
-    padding: 15px;
+.Inicio input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #0078d4; /* Cambia el color de fondo según necesites */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Inicio input[type="submit"]:hover {
+    background-color: #005ea2; /* Cambia el color de fondo al pasar el cursor */
+}
+
+
+.Registro{
+    background: rgb(16,80,207);
+    background: radial-gradient(circle, rgba(16,80,207,1) 20%, rgba(5,151,231,1) 65%);
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.contacto{
+    background: rgb(16,80,207);
+    background: radial-gradient(circle, rgba(16,80,207,1) 20%, rgba(5,151,231,1) 65%);
+    color: #fff;
+    padding: 50px 0;
+}
+
+/* Contenido general */
+.contenido-seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Alinea el texto al centro */
+    
+}
+
+/* Estilo del título */
+.contacto h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    padding: 20px 0;
+}
+
+/* Estilo de las columnas */
+.contacto .fila{
+    display: flex;
+    justify-content: center; /* Centra las columnas horizontalmente */
+    width: 100%;
+}
+
+.contacto .col{
+    width: 50%;
+    padding: 10px;
+    position: relative;
+    text-align: center; /* Alinea el contenido de la columna al centro */
+}
+
+/* Estilo de los campos de entrada y textarea */
+.contacto .col input, .contacto .col textarea{
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: #252A2E;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Estilo del botón */
+.contacto button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+/* Estilo de la superposición */
+.contacto button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color:#1c4fb6; 
+    z-index: -1;
+    transition: 1s;
+}
+
+/* Efecto de superposición al pasar el mouse */
+.contacto button:hover .overlay{
+    width: 100%;
+}
+
+/* Estilo de la información */
+.contacto .col .info{
+    position: absolute;
+    top: 50%; /* Posiciona la información en el centro vertical */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #067cdd;
+    padding: 20px;
+    max-width: 350px;
+}
+
+/* Estilo de la lista de información */
+.contacto .col .info ul{
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo de los elementos de la lista de información */
+.contacto .col .info ul li{
+    margin-bottom: 20px;
+}
+
+/* Estilo de los iconos en la lista de información */
+.contacto .col .info ul li i{
+    color: #1c4fb6; 
+    margin-right: 20px;
+}
+
+
+/* Estilo para el formulario de registro */
+.Registro .container {
+    background-color: #f9f9f9;
+    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px; /* Ajusta según sea necesario */
+    margin-top: 100px; /* Ajusta el margen superior según sea necesario */
+    max-width: 400px; /* Ajusta según necesites */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-@keyframes wave {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+.Registro h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
 }
-.producto img {
+
+.Registro input[type="text"],
+.Registro input[type="email"],
+.Registro input[type="password"] {
     width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 
-.producto h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
+.Registro input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #0078d4; /* Cambia el color de fondo según necesites */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.producto p {
-    margin-bottom: 10px;
+.Registro input[type="submit"]:hover {
+    background-color: #005ea2; /* Cambia el color de fondo al pasar el cursor */
 }
 
-.producto .precio {
-    font-weight: bold;
-    color: #0078d4;
-}
-button:hover{
-    color:#0e36ebfd;
-}
 
-.precio-original {
-    color: #888;
-    text-decoration: line-through;
-}
 
-.precio-descuento {
-    color: #f00;
-    font-weight: bold;
+/* Estilos para la versión móvil */
+@media screen and (max-width: 768px) {
+    .productos {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
 }
-
 
 
 .frame {
     display: inline-block;
     border: 5px solid #fff;
     padding: 10px;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: nowrap; /* Asegura que las imágenes no se envuelvan */
-    overflow-x: auto; /* Permite desplazamiento horizontal */
-    gap: 10px; /* Espacio entre imágenes */
-}
-
-.gallery img {
-    max-width: 100%;
-    max-height: calc(100vh - 40px); /* Altura máxima del frame */
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.1);
 }

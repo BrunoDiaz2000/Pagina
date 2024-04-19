@@ -5,71 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <form action="envio.php" method="POST"></form>
     <title>Contacto</title>
-    <link rel="stylesheet" href="formularioC.css">
+    <link rel="stylesheet" href="estilo.css">
     <script src="formularioC.js"></script>
 </head>
 <body>
     <div class="contenedor-header">
         <header>
             <div class="logo">
-                <a href="#">
-                    <img src="Imagen de logo/logo.1.jpg" width="50" height="50" alt="Logo">
-                    <span >Geometricos PC </span>
-                 
+                <a href="index.html">
+                    <span>ITIZ - UNCHAINED</span>                
                 </a>
             </div>
-      
             <nav id="nav" class="navegador">
                 <ul class="menu">
                     <li><a href="index.html" onclick="seleccionar()" class="texto">INICIO</a></li>
                     <li>
-                        <a href="#Productos" onclick="mostrarSubMenu('productos')" class="texto">PRODUCTOS</a>
-                        <ul id="productosSubMenu" class="submenu">
-                            <li><a href="Productos mas vendido.html">Lo más vendido</a>
-                            <a href="Productos con descuento.html">Con descuento</a>
-                            <a href="#" onclick="mostrarSubMenuInterno('marcasSubMenuInterno')">Marcas</a>
-                                <ul id="marcasSubMenuInterno" class="submenusi">
-                                    <li><a href="intel.html">Intel</a>
-                                    <a href="amd.html">AMD</a>
-                                    <a href="Nvidia.html">NVIDIA</a>
-                                    <a href="Asus.html">ASUS</a>
-                                    <a href="Msi.html">MSI</a>
-                                    <a href="gigabyte.html">GIGABYTE</a>
-                                    <a href="Corsair.html">Corsair</a>
-                                    <a href="Crusial.html">Crucial(Micron)</a></li>
-                                </ul>
-                            </li>
+                        <a href="#Cuenta" onclick="mostrarSubMenu('cuenta')" class="texto">CUENTA</a>
+                        <ul id="cuentaSubMenu" class="submenu">
+                            <li><a href="iniciodessesion.html" onclick="seleccionar()">INICIO DE SESION</a>
+                            <a href="registro.html" onclick="seleccionar()">REGISTRARSE</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#Cuenta" onclick="mostrarSubMenu('cuenta')" class="texto">CUENTA</a>
-                        <ul id="cuentaSubMenu" class="submenu">
-                            <li><a href="iniciodessesion.html" onclick="seleccionar()" class="texto">Inicio de sesión</a>
-                            <a href="/registro.html" onclick="seleccionar()" class="texto">Registrarse</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#Contacto" onclick="seleccionar()" class="texto">CONTACTO</a>
-                        <ul id="cuentaSubMenu" class="submenu">
-                            <li><a href="Sucursal.html" onclick="seleccionar()" class="texto">Sucursal</a>
-                            <a href="formularioC.html" onclick="seleccionar()" class="texto">Formulario</a></li>
-                        </ul>
-                    </li>
-                    <li><img src="Carrito de compras/carito.png" width="50" height="50" alt="Carrito" onclick="seleccionar()"></li>
-                    <ul>
-                        <li>
-                            <div class="cart">
-                                <h2>Carrito</h2>
-                                <ul id="cart-items">
-                                    <!-- Los elementos del carrito se agregarán aquí dinámicamente con JavaScript -->
-                                </ul>
-                                <p>Total: $<span id="cart-total">0</span></p>
+                        <a href="#Productos" onclick="mostrarSubMenu('productos')" class="texto">REGISTROS</a>
+                        <ul id="productosSubMenu" class="submenu">
+                            <div class="sec">
+                                <div class="bloc"></div>
+                                <li><a href="Productos mas vendido.html">ALERTAS</a>
+                                    <a href="Productos con descuento.html">NOTIFICACIONES</a>
+                                </li>
                             </div>
-                        </li>
+                        </ul>
+                    <li><a href="formularioC.html" onclick="seleccionar()" class="texto">FORMULARIO</a></li>
                     </ul>
+                </li>
                 </ul>
-            </nav>    </div>
-    <!--Contenedor header -->
+            </nav>
+            <!-- Icono de hamburguesa -->
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <!-- Icono de hamburguesa -->
+        </header>
+    </div>
     
     <!--Contenedor header -script -->
    
@@ -108,15 +88,14 @@
             <div class="fila">
                 <!-- Formulario -->
                 <div class="col">
-                    <form action="https://formspree.io/f/mbjnzjjg" method="POST">
+                    <form action="https://formspree.io/f/moqgydjo" method="POST">
                         <input type="text" name="nombre" placeholder="Tú Nombre">
                         <input type="tel" name="telefono" placeholder="Número telefónico">
                         <input type="email" name="correo" placeholder="Dirección de correo">
                         <input type="text" name="tema" placeholder="Problema">
                         <textarea name="mensaje" cols="30" rows="10" placeholder="Explicar el problema"></textarea>
-                        <button type="submit">
-                            Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
-                            <span class="overlay"></span>
+                        <button type="submit" id="EnviarCorreo"> Enviar Mensaje
+                            <span class="overlay"></span>                            
                         </button>
                     </form>
                 </div>
@@ -125,22 +104,14 @@
     </section>
     <!-- Fin del contenido principal -->
 
-
-    <!--FOOTER-->
-    <footer>
-        <a href="#contacto" class="arriba">
-            <i class="fa-solid fa-angles-up"></i>
-        </a>
-        <div class="redes">
-            <a href="https://es-la.facebook.com/login/"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://mx.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
-            <div class="Ad">
-                <p>Created by Geometricos_PC 2024 | Para cualquier problema, contáctanos al teléfono: 5512365089</p> 
+        <!--FOOTER-->
+        <footer>
+            <div class="redes">
+                <a href="https://www.facebook.com/groups/428074003141405"><i class="fa-brands fa-facebook-f"></i></a>
+                <div class="Ad">
+                    <p>Created by UNCHAINED 2024 | Para cualquier problema, contáctanos al teléfono: 5634579955</p> 
+                </div>
             </div>
-        </div>
-    </footer>
-    <!--FOOTER-->
-
+        </footer>
 </body>
 </html>
