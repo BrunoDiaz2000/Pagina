@@ -25,21 +25,21 @@
                 <li>
                     <a href="#Cuenta" onclick="mostrarSubMenu('cuenta')" class="texto">CUENTA</a>
                     <ul id="cuentaSubMenu" class="submenu">
-                        <li><a href="iniciodessesion.html" onclick="seleccionar()" class="texto">INICIO DE SESION</a>
-                        <a href="registro.html" onclick="seleccionar()" class="texto">REGISTRARSE</a></li>
+                        <li><a href="iniciodessesion.html" onclick="seleccionar()">INICIO DE SESION</a>
+                        <a href="registro.html" onclick="seleccionar()">REGISTRARSE</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#Productos" onclick="mostrarSubMenu('productos')" class="texto">ALERTAS</a>
                     <ul id="productosSubMenu" class="submenu">
-                        <li><a href="Productos mas vendido.html">ALERTAS</a>
-                        <a href="Productos con descuento.html">NOTIFICACIONES</a>
-                        </li>
+                        <div class="sec">
+                            <div class="bloc"></div>
+                            <li><a href="Productos mas vendido.html">ALERTAS</a>
+                                <a href="Productos con descuento.html">NOTIFICACIONES</a>
+                            </li>
+                        </div>
                     </ul>
-                </li>
-                <li><a href="#Contacto" onclick="seleccionar()" class="texto">CONTACTO</a>
-                <ul id="cuentaSubMenu" class="submenu">
-                    <li><a href="formularioC.html" onclick="seleccionar()" class="texto">Formulario</a></li>
+                <li><a href="formularioC.html" onclick="seleccionar()" class="texto">FORMULARIO</a></li>
                 </ul>
             </li>
             </ul>
@@ -75,43 +75,7 @@
     }
 </script>
 
-<script>
-    // Función para agregar un producto al carrito
-function agregarAlCarrito(precio,itemId) {
-// Crear un nuevo elemento de lista
-var nuevoItem = document.createElement("li");
-nuevoItem.textContent = "Productos - $" + precio;
-
-nuevoItem.setAttribute("id", itemId);
-
-// Agregar el nuevo elemento al carrito
-document.getElementById("cart-items").appendChild(nuevoItem);
-
-// Actualizar el total
-var totalActual = parseFloat(document.getElementById("cart-total").textContent);
-totalActual += precio;
-document.getElementById("cart-total").textContent = totalActual.toFixed(2);
-
-var botonEliminar = document.createElement("button");
-botonEliminar.textContent = "Eliminar";
-botonEliminar.onclick = function() {
-    eliminarDelCarrito(itemId, precio);
-};
-nuevoItem.appendChild(botonEliminar);
-}
-function eliminarDelCarrito(itemId, precio) {
-// Eliminar el elemento del carrito
-var elementoEliminar = document.getElementById(itemId);
-elementoEliminar.parentNode.removeChild(elementoEliminar);
-
-// Actualizar el total
-var totalActual = parseFloat(document.getElementById("cart-total").textContent);
-totalActual -= precio;
-document.getElementById("cart-total").textContent = totalActual.toFixed(2);
-}
-</script>
-
- <!-- SECCION INICIO -->
+<!-- SECCION INICIO -->
  <section id="Inicio" class="Inicio">
     <div class="conteiner">
         <h2 class="titulo">Bienvenidos a ITIZ - UNCHAINED</h2> <br> 
@@ -122,9 +86,7 @@ document.getElementById("cart-total").textContent = totalActual.toFixed(2);
     <!--FOOTER-->
     <footer>
         <div class="redes">
-            <a href="https://es-la.facebook.com/login/"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://mx.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/groups/428074003141405"><i class="fa-brands fa-facebook-f"></i></a>
             <div class="Ad">
                 <p>Created by UNCHAINED 2024 | Para cualquier problema, contáctanos al teléfono: 5634579955</p> 
             </div>
