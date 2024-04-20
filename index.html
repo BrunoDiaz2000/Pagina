@@ -5,45 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Inicio</title>
+    <title>Iniciar Sesión</title>
+    <form action="esc.php" method="POST"></form>
     <link rel="stylesheet" href="estilo.css">
-    <script src="productos.js"></script>
+    <script src="iniciodessesion.js"></script>
 </head>
 <body>
-    
-<!--Contenedor header -->
+    <!--Contenedor header -->
 <div class="contenedor-header">
     <header>
         <div class="logo">
             <a href="index.html">
-                <span>ITIZ - UNCHAINED</span>                
+                <span>ITIZ - UNCHAINED</span>                    
             </a>
         </div>
-        <nav id="nav" class="navegador">
-            <ul class="menu">
-                <li><a href="index.html" onclick="seleccionar()" class="texto">INICIO</a></li>
-                <li>
-                    <a href="#Cuenta" onclick="mostrarSubMenu('cuenta')" class="texto">CUENTA</a>
-                    <ul id="cuentaSubMenu" class="submenu">
-                        <li><a href="iniciodessesion.html" onclick="seleccionar()">INICIO DE SESION</a>
-                        <a href="registro.html" onclick="seleccionar()">REGISTRARSE</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#Productos" onclick="mostrarSubMenu('productos')" class="texto">REGISTROS</a>
-                    <ul id="productosSubMenu" class="submenu">
-                        <div class="sec">
-                            <div class="bloc"></div>
-                            <li><a href="Productos mas vendido.html">ALERTAS</a>
-                                <a href="Productos con descuento.html">NOTIFICACIONES</a>
-                            </li>
-                        </div>
-                    </ul>
-                <li><a href="formularioC.html" onclick="seleccionar()" class="texto">FORMULARIO</a></li>
-                </ul>
-            </li>
-            </ul>
-        </nav>
         <!-- Icono de hamburguesa -->
         <div class="nav-responsive" onclick="mostrarOcultarMenu()">
             <i class="fa-solid fa-bars"></i>
@@ -51,10 +26,9 @@
         <!-- Icono de hamburguesa -->
     </header>
 </div>
-<!--Contenedor header -->
-
-<script>
-    // Función para mostrar u ocultar el menú en pantallas pequeñas
+    <!--Contenedor header -->
+    <script>
+       // Función para mostrar u ocultar el menú en pantallas pequeñas
     function mostrarOcultarMenu() {
         var menu = document.querySelector('.contenedor-header .navegador .menu');
         menu.classList.toggle('active');
@@ -73,26 +47,26 @@
             subMenu.classList.toggle('active');
         }
     }
-</script>
-
-<!-- SECCION INICIO -->
- <section id="Inicio" class="Inicio1">
-    <div class="conteiner">
-        <h2 class="titulo">Bienvenidos a ITIZ - UNCHAINED</h2> <br> 
-        <p>Que es una pagina web 
-            Una página web es un espacio virtual en internet que contiene información organizada y accesible a través 
-            de un navegador web. Generalmente, una página web está compuesta por varios elementos como texto, imágenes, 
-            videos, enlaces y otros recursos multimedia. 
-            Nuestra página web es una herramienta poderosa para compartir información, promover productos o servicios, 
-            interactuar con la audiencia y establecer una presencia en línea sólida, lo que buscamos es mantener información 
-            valioso de nuestros usuarios, manteniendo el orden contra posibles ataques cibernéticos.</p>
+    </script>
+    <!--Contenedor header -script -->
+    
+    <!-- Inicio -->
+    <section id="Inicio" class="Inicio">
+        <div class="container">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <input type="text" id="username" name="username" placeholder="Nombre de usuario" required>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                <input type="submit" method="POST" value="Iniciar Sesión">
+            </form>
         </div>
     </section>
-    
+    <!-- Fin del contenido principal -->
+
     <!--FOOTER-->
     <footer>
         <div class="redes">
-            <a href="https://www.facebook.com/groups/428074003141405"><i class="fa-brands fa-facebook-f"></i></a>
+            <!-- <a href="https://www.facebook.com/groups/428074003141405"><i class="fa-brands fa-facebook-f"></i></a> -->
             <div class="Ad">
                 <p>Created by UNCHAINED 2024 | Para cualquier problema, contáctanos al teléfono: 5634579955</p> 
             </div>
